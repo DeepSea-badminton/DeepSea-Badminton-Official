@@ -184,6 +184,16 @@ li {
   color: #fff;
 }
 
+/* ===== チーム選択ボタンの説明文 ===== */
+.btn-sub {
+  display: block;
+  font-size: 0.9rem;   /* 小さめ */
+  color: #000;         /* 黒字 */
+  font-weight: normal;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
 .btn.deepsea {
   background: linear-gradient(135deg, #1e90ff, #004aad);
 }
