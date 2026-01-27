@@ -2,11 +2,10 @@
    historyページ専用
 ========================= */
 
-/* 共通mainのカード化を無効 */
-.history {
+main.history {
   max-width: 900px;
   margin: 40px auto;
-  padding: 0;
+  padding: 0 16px;
 }
 
 /* タイトル */
@@ -17,7 +16,7 @@
   padding-left: 12px;
 }
 
-/* ===== 年見出し ===== */
+/* 年 */
 .year-title {
   margin-top: 32px;
   font-size: 1.4rem;
@@ -27,7 +26,6 @@
   position: relative;
 }
 
-/* ▶ */
 .year-title::after {
   content: "▶";
   position: absolute;
@@ -35,7 +33,6 @@
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.2s;
-  font-size: 0.9rem;
 }
 
 .year-title.open::after {
@@ -61,19 +58,12 @@
   column-gap: 0.2em;
   margin-bottom: 8px;
   line-height: 1.6;
-  white-space: normal;
 }
 
 /* 日 */
 .history-item .day {
   text-align: right;
-  font-variant-numeric: tabular-nums;
   font-weight: 600;
-}
-
-/* 線 */
-.history-item .bar {
-  text-align: center;
 }
 
 /* 本文 */
