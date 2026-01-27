@@ -10,6 +10,7 @@ const historyData = [
   { date: "2025-04-17", priority: 1, title: "募集サイトでチームメンバー募集開始" },
   { date: "2025-04-22", priority: 1, title: "LINEグループ作成" },
   { date: "2025-05-03", priority: 3, title: "YTKCUP MD2🥈" },
+  { date: "2025-08-31", priority: 1, title: "NHK「24時間テレビ」出演" },
   { date: "2025-09-15", priority: 3, title: "小平市民シングルス大会 MS2🥉・MS3🥇🥈" },
   { date: "2025-09-29", priority: 3, title: "北本オープン団体戦 男子Aチーム🥇" },
   { date: "2025-10-05", priority: 3, title: "小平市民混合ダブルス大会にて代表ACL断裂" },
