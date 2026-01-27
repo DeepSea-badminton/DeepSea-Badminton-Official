@@ -1,4 +1,7 @@
-// ===== チームのあゆみデータ =====
+// ============================
+// チームのあゆみ データ
+// ここに追加するだけ
+// ============================
 const historyData = [
   // 2025年
   { date: "2025-04-13", priority: 1, title: "大会用の名前だけのチームとして発足" },
@@ -17,14 +20,16 @@ const historyData = [
   { date: "2026-01-18", priority: 3, title: "調布市民ダブルス大会 MD3🥈" }
 ];
 
-// ===== 描画 =====
+// ============================
+// 描画処理
+// ============================
 function renderHistory() {
   const container = document.getElementById("history-container");
   container.innerHTML = "";
 
   const grouped = {};
 
-  // 年 → 月 → 日
+  // 年 → 月 → 日 にまとめる
   historyData.forEach(item => {
     const d = new Date(item.date);
     const y = d.getFullYear();
@@ -38,16 +43,17 @@ function renderHistory() {
     grouped[y][m][day].push(item);
   });
 
+  // 年（古い順）
   Object.keys(grouped).sort((a, b) => a - b).forEach(year => {
-    const yearSection = document.createElement("section");
+    const yearBlock = document.createElement("section");
 
-    yearSection.innerHTML = `
+    yearBlock.innerHTML = `
       <h3 class="year-title open">${year}年</h3>
       <div class="year-content open"></div>
     `;
 
-    const yearTitle = yearSection.querySelector(".year-title");
-    const yearContent = yearSection.querySelector(".year-content");
+    const yearTitle = yearBlock.querySelector(".year-title");
+    const yearContent = yearBlock.querySelector(".year-content");
 
     // 年の開閉
     yearTitle.addEventListener("click", () => {
@@ -55,17 +61,19 @@ function renderHistory() {
       yearContent.classList.toggle("open");
     });
 
+    // 月
     Object.keys(grouped[year]).sort((a, b) => a - b).forEach(month => {
       const monthBlock = document.createElement("div");
       monthBlock.className = "month-block";
 
       monthBlock.innerHTML = `
-        <h4 class="month-title">${month}月</h4>
+        <div class="month-title">${month}月</div>
         <ul class="day-list"></ul>
       `;
 
       const ul = monthBlock.querySelector(".day-list");
 
+      // 日
       Object.keys(grouped[year][month]).sort((a, b) => a - b).forEach(day => {
         grouped[year][month][day].forEach((item, index) => {
           const li = document.createElement("li");
@@ -85,8 +93,9 @@ function renderHistory() {
       yearContent.appendChild(monthBlock);
     });
 
-    container.appendChild(yearSection);
+    container.appendChild(yearBlock);
   });
 }
 
+// 実行
 renderHistory();
