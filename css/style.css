@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111;
+}
+
+/* トップ選択画面 */
+body.top {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a2540, #1e6fa3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  text-align: center;
+  color: white;
+}
+
+.team-select {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-card {
+  width: 260px;
+  padding: 30px 20px;
+  background: white;
+  color: #111;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.team-card.deepsea {
+  border-top: 8px solid #0a2540;
+}
+
+.team-card.rabuka {
+  border-top: 8px solid #4fc3f7;
+}
+
+header {
+  background: #0a2540;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
