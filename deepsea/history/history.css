@@ -4,25 +4,48 @@
   margin: 0 auto;
 }
 
-/* 年見出し */
-.history h3 {
+/* ===== 年見出し（開閉） ===== */
+.year-title {
   margin-top: 40px;
   font-size: 1.3rem;
   border-left: 6px solid #1e90ff;
   padding-left: 12px;
+  cursor: pointer;
+  position: relative;
 }
 
-/* 月見出し */
+/* ▶ アイコン */
+.year-title::after {
+  content: "▶";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+  font-size: 0.9rem;
+}
+
+/* 開いているとき */
+.year-title.open::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* 年の中身 */
+.year-content {
+  display: none;
+  margin-left: 10px;
+}
+
+.year-content.open {
+  display: block;
+}
+
+/* ===== 月見出し ===== */
 .history h4 {
   margin: 20px 0 8px;
   font-size: 1.05rem;
   color: #444;
   font-weight: 600;
-}
-
-/* リスト */
-.history ul {
-  margin-top: 15px;
 }
 
 /* ===== 年表1行 ===== */
@@ -56,7 +79,7 @@
   text-overflow: ellipsis;
 }
 
-/* ===== 重要度による太さ ===== */
+/* ===== 重要度（あなたの設計どおり） ===== */
 .history-item[data-priority="1"] {
   font-weight: 700; /* 重要 */
 }
