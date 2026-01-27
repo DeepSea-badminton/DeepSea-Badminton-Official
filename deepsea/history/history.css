@@ -88,6 +88,17 @@
 }
 
 /* ===== 重要度 ===== */
-.history-item[data-priority="1"] { font-weight: 900; }
-.history-item[data-priority="2"] { font-weight: 600; }
-.history-item[data-priority="3"] { font-weight: 400; }
+.history-item[data-priority="1"] {
+  font-weight: 900;
+  color: #000;
+}
+
+.history-item[data-priority="2"] {
+  font-weight: 700;
+  color: #333;
+}
+
+.history-item[data-priority="3"] {
+  font-weight: 400;
+  color: #666;
+}
