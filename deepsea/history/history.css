@@ -1,12 +1,18 @@
-/* ===== あゆみページ ===== */
+/* ==============================
+   チームのあゆみページ
+   ============================== */
+
+/* 全体 */
 .history {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
-  font-size: 0.85rem; /* 全体少し小さく */
+  font-size: 0.85rem;
 }
 
-/* ===== 年見出し ===== */
+/* ==============================
+   年見出し（開閉）
+   ============================== */
 .year-title {
   margin-top: 40px;
   font-size: 1.3rem;
@@ -16,6 +22,7 @@
   position: relative;
 }
 
+/* ▶ */
 .year-title::after {
   content: "▶";
   position: absolute;
@@ -30,7 +37,7 @@
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* ===== 年の中身 ===== */
+/* 年の中身 */
 .year-content {
   display: none;
 }
@@ -39,33 +46,39 @@
   display: block;
 }
 
-/* ===== 月 ===== */
+/* ==============================
+   月
+   ============================== */
 .history h4 {
   margin: 20px 0 6px;
   font-size: 0.95rem;
   color: #444;
 }
 
-/* ===== 年表1行 ===== */
+/* ==============================
+   年表1行（超左寄せ）
+   ============================== */
 .history-item {
-  display: flex;              /* ← grid をやめる */
+  display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: 2px;
 
-  margin-left: 0.6em;         /* ← 月の文字の下から開始 */
+  margin-left: 0;          /* ← 完全に左 */
   margin-bottom: 6px;
   line-height: 1.6;
 }
 
-/* 日付 */
+/* 日付（限界まで左） */
 .history-item .day {
-  min-width: 2em;
-  text-align: right;
+  min-width: 1.2em;        /* ← これ以上詰めると潰れる */
+  text-align: left;        /* ← 右寄せを完全にやめる */
   font-variant-numeric: tabular-nums;
 }
 
 /* 縦線 */
 .history-item .bar {
+  margin-left: -2px;       /* ← 気持ち左へ */
+  margin-right: 2px;
   color: #999;
 }
 
@@ -74,7 +87,35 @@
   word-break: break-word;
 }
 
-/* ===== 重要度 ===== */
-.history-item[data-priority="1"] { font-weight: 700; }
-.history-item[data-priority="2"] { font-weight: 500; }
-.history-item[data-priority="3"] { font-weight: 400; }
+/* ==============================
+   重要度
+   ============================== */
+.history-item[data-priority="1"] {
+  font-weight: 700;
+}
+
+.history-item[data-priority="2"] {
+  font-weight: 500;
+}
+
+.history-item[data-priority="3"] {
+  font-weight: 400;
+}
+
+/* ==============================
+   スマホ対応
+   ============================== */
+@media screen and (max-width: 600px) {
+  .history {
+    margin: 24px auto;
+    font-size: 0.8rem;
+  }
+
+  .history-item {
+    gap: 2px;
+  }
+
+  .history-item .day {
+    min-width: 1.1em;
+  }
+}
