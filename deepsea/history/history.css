@@ -75,7 +75,6 @@
 
 /* 本文 */
 .history-item .text {
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
