@@ -35,8 +35,13 @@
   transform: translateY(-50%) rotate(90deg);
 }
 
+/* ★ ここが重要 ★ */
 .year-content {
-  display: block; /* 初期は全部開く */
+  display: none;
+}
+
+.year-content.open {
+  display: block;
 }
 
 /* ===== 月 ===== */
@@ -83,6 +88,6 @@
 }
 
 /* ===== 重要度 ===== */
-.history-item[data-priority="1"] { font-weight: 2000; }
-.history-item[data-priority="2"] { font-weight: 1000; }
+.history-item[data-priority="1"] { font-weight: 900; }
+.history-item[data-priority="2"] { font-weight: 600; }
 .history-item[data-priority="3"] { font-weight: 400; }
