@@ -235,19 +235,99 @@ footer a {
   }
 }
 
-/* ===== 共通ヘッダー強制 ===== */
-header {
-  width: 100%;
-  background: linear-gradient(135deg, #1e90ff, #0066cc);
-  color: #fff;
+/* =========================
+   チームのあゆみ（history）
+   ========================= */
+
+main.history {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-size: 0.85rem;
 }
 
-header nav {
+/* タイトル */
+main.history .history-title {
+  margin-bottom: 30px;
+}
+
+/* 年 */
+main.history .year-title {
+  margin-top: 40px;
+  font-size: 1.3rem;
+  border-left: 6px solid #1e90ff;
+  padding-left: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+main.history .year-title::after {
+  content: "▶";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+  font-size: 0.8rem;
+}
+
+main.history .year-title.open::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* 年の中身 */
+main.history .year-content {
+  display: none;
+}
+
+main.history .year-content.open {
+  display: block;
+}
+
+/* 月 */
+main.history .month-block {
+  margin-top: 18px;
+}
+
+main.history .month-title {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+/* 日リスト */
+main.history .day-list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* 1行 */
+main.history .history-item {
   display: flex;
-  width: 100%;
+  gap: 4px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  margin-left: 0.8em;
 }
 
-header nav a {
-  flex: 1;
-  text-align: center;
+/* 日付 */
+main.history .history-item .day {
+  min-width: 2.4em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
+
+/* 線 */
+main.history .history-item .bar {
+  color: #999;
+}
+
+/* 本文 */
+main.history .history-item .text {
+  word-break: break-word;
+}
+
+/* 重要度 */
+main.history .history-item[data-priority="1"] { font-weight: 700; }
+main.history .history-item[data-priority="2"] { font-weight: 500; }
+main.history .history-item[data-priority="3"] { font-weight: 400; }
