@@ -1,7 +1,4 @@
-/* ==============================
-   チームのあゆみページ
-   ============================== */
-
+/* ===== あゆみページ ===== */
 .history {
   max-width: 900px;
   margin: 40px auto;
@@ -9,9 +6,12 @@
   font-size: 0.85rem;
 }
 
-/* ==============================
-   年見出し
-   ============================== */
+/* タイトル */
+.history-title {
+  margin-bottom: 30px;
+}
+
+/* ===== 年 ===== */
 .year-title {
   margin-top: 40px;
   font-size: 1.3rem;
@@ -43,37 +43,40 @@
   display: block;
 }
 
-/* ==============================
-   月（← ここが基準）
-   ============================== */
-.history h4 {
-  margin: 22px 0 6px;
-  padding-left: 1.6em;   /* ★ 日付行と同じ基準位置 */
-  font-size: 0.95rem;
-  color: #444;
+/* ===== 月ブロック ===== */
+.month-block {
+  margin-top: 18px;
 }
 
-/* ==============================
-   年表1行（全月共通で揃う）
-   ============================== */
+/* 月 */
+.month-title {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* 月の下から開始 */
+.day-list {
+  margin-left: 1.2em;
+  padding-left: 0;
+}
+
+/* ===== 1行 ===== */
 .history-item {
   display: flex;
-  align-items: flex-start;
-  gap: 4px;
-
-  margin-left: 1.6em;   /* ★ 月の文字の真下から開始 */
+  gap: 6px;
   margin-bottom: 6px;
   line-height: 1.6;
 }
 
 /* 日付 */
 .history-item .day {
-  width: 1.6em;
+  min-width: 1.8em;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-/* 区切り線 */
+/* 線 */
 .history-item .bar {
   color: #999;
 }
@@ -83,28 +86,7 @@
   word-break: break-word;
 }
 
-/* ==============================
-   重要度
-   ============================== */
+/* ===== 重要度 ===== */
 .history-item[data-priority="1"] { font-weight: 700; }
 .history-item[data-priority="2"] { font-weight: 500; }
 .history-item[data-priority="3"] { font-weight: 400; }
-
-/* ==============================
-   スマホ
-   ============================== */
-@media screen and (max-width: 600px) {
-  .history {
-    font-size: 0.8rem;
-  }
-
-  .history h4,
-  .history-item {
-    padding-left: 1.4em;
-    margin-left: 1.4em;
-  }
-
-  .history-item .day {
-    width: 1.4em;
-  }
-}
