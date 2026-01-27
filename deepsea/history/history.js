@@ -33,32 +33,56 @@ function groupByYear(data) {
 // ===== 表示 =====
 function renderHistory() {
   const container = document.getElementById("history-container");
-  const grouped = groupByYear(historyData);
+  container.innerHTML = "";
 
-  // 年を古い順に
-  const years = Object.keys(grouped).sort((a, b) => a - b);
+  // 年ごとにまとめる
+  const groupedByYear = {};
+
+  historyData.forEach(item => {
+    const date = new Date(item.date);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+
+    if (!groupedByYear[year]) groupedByYear[year] = {};
+    if (!groupedByYear[year][month]) groupedByYear[year][month] = [];
+
+    groupedByYear[year][month].push(item);
+  });
+
+  // 年：古い順
+  const years = Object.keys(groupedByYear).sort((a, b) => a - b);
 
   years.forEach(year => {
-    const section = document.createElement("section");
+    const yearSection = document.createElement("section");
 
-    const h3 = document.createElement("h3");
-    h3.textContent = `${year}年`;
-    section.appendChild(h3);
+    const yearTitle = document.createElement("h3");
+    yearTitle.textContent = `${year}年`;
+    yearSection.appendChild(yearTitle);
 
-    const ul = document.createElement("ul");
+    // 月：1月 → 12月
+    const months = Object.keys(groupedByYear[year]).sort((a, b) => a - b);
 
-    grouped[year]
-      .sort((a, b) => new Date(a.date) - new Date(b.date))
-      .forEach(item => {
-        const li = document.createElement("li");
-        li.className = "history-item";
-        li.dataset.priority = item.priority;
-        li.textContent = `${item.date.replace(year + "-", "")}　${item.title}`;
-        ul.appendChild(li);
-      });
+    months.forEach(month => {
+      const monthTitle = document.createElement("h4");
+      monthTitle.textContent = `${month}月`;
+      yearSection.appendChild(monthTitle);
 
-    section.appendChild(ul);
-    container.appendChild(section);
+      const ul = document.createElement("ul");
+
+      groupedByYear[year][month]
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .forEach(item => {
+          const li = document.createElement("li");
+          li.className = "history-item";
+          li.dataset.priority = item.priority;
+          li.textContent = `${item.date.slice(5)}｜${item.title}`;
+          ul.appendChild(li);
+        });
+
+      yearSection.appendChild(ul);
+    });
+
+    container.appendChild(yearSection);
   });
 }
 
