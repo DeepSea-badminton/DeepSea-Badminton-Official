@@ -1,22 +1,5 @@
-/* =========================
-   historyページ専用
-========================= */
+/* ===== あゆみページ（中身専用） ===== */
 
-main.history {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 16px;
-}
-
-/* タイトル */
-.history-title {
-  font-size: 1.6rem;
-  margin-bottom: 24px;
-  border-left: 6px solid #1e90ff;
-  padding-left: 12px;
-}
-
-/* 年 */
 .year-title {
   margin-top: 32px;
   font-size: 1.4rem;
@@ -39,19 +22,16 @@ main.history {
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* 年の中身 */
 .year-content {
   margin-left: 6px;
 }
 
-/* 月 */
 .history h4 {
   margin: 18px 0 6px;
   font-size: 1.05rem;
   color: #444;
 }
 
-/* 1行 */
 .history-item {
   display: grid;
   grid-template-columns: 1.8em 1em 1fr;
@@ -60,18 +40,15 @@ main.history {
   line-height: 1.6;
 }
 
-/* 日 */
 .history-item .day {
   text-align: right;
   font-weight: 600;
 }
 
-/* 本文 */
 .history-item .text {
   word-break: break-word;
 }
 
-/* 重要度 */
 .history-item[data-priority="1"] { font-weight: 700; }
 .history-item[data-priority="2"] { font-weight: 500; }
 .history-item[data-priority="3"] { font-weight: 400; }
