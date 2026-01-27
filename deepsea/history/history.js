@@ -35,8 +35,8 @@ function renderHistory() {
   const container = document.getElementById("history-container");
   const grouped = groupByYear(historyData);
 
-  // 年を新しい順に
-  const years = Object.keys(grouped).sort((a, b) => b - a);
+  // 年を古い順に
+  const years = Object.keys(grouped).sort((a, b) => a - b);
 
   years.forEach(year => {
     const section = document.createElement("section");
