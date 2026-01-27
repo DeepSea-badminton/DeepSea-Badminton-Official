@@ -22,7 +22,7 @@ function renderHistory() {
   const container = document.getElementById("history-container");
   container.innerHTML = "";
 
-  // 年 → 月 → 配列 にまとめる
+  // 年 → 月 → 配列
   const grouped = {};
 
   historyData.forEach(item => {
@@ -56,7 +56,6 @@ function renderHistory() {
 
       const ul = document.createElement("ul");
 
-      // 日付順
       const events = grouped[year][month].sort(
         (a, b) => new Date(a.date) - new Date(b.date)
       );
@@ -68,16 +67,19 @@ function renderHistory() {
 
         const day = new Date(item.date).getDate();
 
-        // 直前と同じ日か？
+        // 前の行と同じ日か？
         let showDay = true;
         if (index > 0) {
           const prevDay = new Date(events[index - 1].date).getDate();
           if (prevDay === day) showDay = false;
         }
 
-        li.textContent = showDay
-          ? `${day}｜${item.title}`
-          : `｜${item.title}`;
+        // ★ 文字で揃えない。要素で分ける
+        li.innerHTML = `
+          <span class="day">${showDay ? day : ""}</span>
+          <span class="bar">｜</span>
+          <span class="text">${item.title}</span>
+        `;
 
         ul.appendChild(li);
       });
