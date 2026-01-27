@@ -22,26 +22,25 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== ヘッダー ===== */
-header {
+/* ===== 共通ヘッダー（強制） ===== */
+.site-header {
   background: linear-gradient(135deg, #1e90ff, #0066cc);
   color: #fff;
   padding: 36px 20px 24px;
 }
 
-header h1 {
+.site-header h1 {
   margin: 0 0 18px 0;
   font-size: 1.9rem;
   text-align: center;
 }
 
-/* ===== ナビ ===== */
-nav {
+.site-nav {
   display: flex;
   width: 100%;
 }
 
-nav a {
+.site-nav a {
   flex: 1;
   text-align: center;
   color: #fff;
@@ -49,8 +48,8 @@ nav a {
   padding: 14px 0;
 }
 
-nav a:hover {
-  background: rgba(255,255,255,0.2);
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ===== メイン ===== */
