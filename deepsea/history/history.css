@@ -72,7 +72,7 @@
 
 /* 日付 */
 .history-item .day {
-  min-width: 1.4em;        /* ← さらに左へ */
+  min-width: 1.8em;        /* ← さらに左へ */
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
