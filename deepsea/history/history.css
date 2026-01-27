@@ -12,6 +12,14 @@
   padding-left: 12px;
 }
 
+/* 月見出し */
+.history h4 {
+  margin: 20px 0 8px;
+  font-size: 1.05rem;
+  color: #444;
+  font-weight: 600;
+}
+
 /* リスト */
 .history ul {
   margin-top: 15px;
