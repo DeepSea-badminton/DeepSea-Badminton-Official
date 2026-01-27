@@ -223,6 +223,10 @@ footer a {
     font-size: 1.2rem;
   }
 
+  .top-select h1 {
+    font-size: 1.5rem;
+  }
+
   nav {
     gap: 10px;
   }
