@@ -24,7 +24,7 @@
 }
 
 /* 重要度による太さ */
-.history-item[data-priority="3"] {
+.history-item[data-priority="1"] {
   font-weight: 700; /* 重要 */
 }
 
@@ -32,6 +32,6 @@
   font-weight: 500; /* 通常 */
 }
 
-.history-item[data-priority="1"] {
+.history-item[data-priority="3"] {
   font-weight: 400; /* 軽微 */
 }
