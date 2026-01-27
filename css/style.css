@@ -107,9 +107,7 @@ li {
   margin-bottom: 8px;
 }
 
-/* =========================================================
-   トップ選択画面（バドミントンノート風コート）
-========================================================= */
+/* ===== トップ選択画面（バドミントンコート） ===== */
 .top-select {
   min-height: 100vh;
   display: flex;
@@ -118,7 +116,7 @@ li {
   align-items: center;
   text-align: center;
 
-  background-color: #e9f5ec;
+  background: #e9f5ec;
   position: relative;
   overflow: hidden;
 }
@@ -127,66 +125,79 @@ li {
 .top-select::before {
   content: "";
   position: absolute;
-  inset: 7%;
+  inset: 6%;
+  border: 3px solid rgba(255,255,255,0.9); /* 外枠（ダブルス） */
 
-  /* 外枠 */
-  border: 3px solid rgba(255, 255, 255, 0.8);
-
-  /* コート内ライン（ノート想定） */
+  /* 線まとめ */
   background:
-    /* 縦センターライン */
+    /* ネット */
     linear-gradient(
-      90deg,
-      transparent 49.6%,
-      rgba(255,255,255,0.8) 50%,
-      transparent 50.4%
+      to bottom,
+      transparent 49.8%,
+      rgba(255,255,255,0.9) 50%,
+      transparent 50.2%
     ),
 
-    /* 横センター（ネット） */
+    /* センターライン */
     linear-gradient(
-      transparent 49.6%,
-      rgba(255,255,255,0.8) 50%,
-      transparent 50.4%
+      to right,
+      transparent 49.8%,
+      rgba(255,255,255,0.9) 50%,
+      transparent 50.2%
     ),
 
-    /* 上サービスライン */
+    /* 前サービスライン（上下） */
     linear-gradient(
+      to bottom,
       transparent 33%,
-      rgba(255,255,255,0.6) 33.3%,
-      rgba(255,255,255,0.6) 33.8%,
-      transparent 34.1%
+      rgba(255,255,255,0.9) 33.2%,
+      transparent 33.4%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 66.6%,
+      rgba(255,255,255,0.9) 66.8%,
+      transparent 67%
     ),
 
-    /* 下サービスライン */
+    /* シングルスサイドライン（左右） */
     linear-gradient(
-      transparent 66%,
-      rgba(255,255,255,0.6) 66.3%,
-      rgba(255,255,255,0.6) 66.8%,
-      transparent 67.1%
+      to right,
+      transparent 18%,
+      rgba(255,255,255,0.9) 18.2%,
+      transparent 18.4%
+    ),
+    linear-gradient(
+      to right,
+      transparent 81.6%,
+      rgba(255,255,255,0.9) 81.8%,
+      transparent 82%
     );
 
   pointer-events: none;
   z-index: 0;
 }
 
-/* 中身を前に */
+/* コンテンツを線より前に */
 .top-select > * {
   position: relative;
   z-index: 1;
 }
 
+/* ===== タイトル ===== */
 .top-select h1 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* ===== ボタン ===== */
+/* ===== ボタン配置 ===== */
 .select-buttons {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+/* ===== ボタン ===== */
 .btn {
   display: inline-block;
   padding: 26px 44px;
@@ -200,7 +211,6 @@ li {
   background: linear-gradient(135deg, #1e90ff, #004aad);
 }
 
-.btn.frilledfish,
 .btn.frilledshark {
   background: linear-gradient(135deg, #4fc3f7, #0288d1);
 }
