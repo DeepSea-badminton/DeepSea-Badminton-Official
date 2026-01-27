@@ -2,7 +2,6 @@
    チームのあゆみページ
    ============================== */
 
-/* 全体 */
 .history {
   max-width: 900px;
   margin: 40px auto;
@@ -11,7 +10,7 @@
 }
 
 /* ==============================
-   年見出し（開閉）
+   年見出し
    ============================== */
 .year-title {
   margin-top: 40px;
@@ -22,7 +21,6 @@
   position: relative;
 }
 
-/* ▶ */
 .year-title::after {
   content: "▶";
   position: absolute;
@@ -37,7 +35,6 @@
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* 年の中身 */
 .year-content {
   display: none;
 }
@@ -47,38 +44,37 @@
 }
 
 /* ==============================
-   月
+   月（← ここが基準）
    ============================== */
 .history h4 {
-  margin: 20px 0 6px;
+  margin: 22px 0 6px;
+  padding-left: 1.6em;   /* ★ 日付行と同じ基準位置 */
   font-size: 0.95rem;
   color: #444;
 }
 
 /* ==============================
-   年表1行（超左寄せ）
+   年表1行（全月共通で揃う）
    ============================== */
 .history-item {
   display: flex;
   align-items: flex-start;
-  gap: 2px;
+  gap: 4px;
 
-  margin-left: 0;          /* ← 完全に左 */
+  margin-left: 1.6em;   /* ★ 月の文字の真下から開始 */
   margin-bottom: 6px;
   line-height: 1.6;
 }
 
-/* 日付（限界まで左） */
+/* 日付 */
 .history-item .day {
-  min-width: 1.2em;        /* ← これ以上詰めると潰れる */
-  text-align: left;        /* ← 右寄せを完全にやめる */
+  width: 1.6em;
+  text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-/* 縦線 */
+/* 区切り線 */
 .history-item .bar {
-  margin-left: -2px;       /* ← 気持ち左へ */
-  margin-right: 2px;
   color: #999;
 }
 
@@ -90,32 +86,25 @@
 /* ==============================
    重要度
    ============================== */
-.history-item[data-priority="1"] {
-  font-weight: 700;
-}
-
-.history-item[data-priority="2"] {
-  font-weight: 500;
-}
-
-.history-item[data-priority="3"] {
-  font-weight: 400;
-}
+.history-item[data-priority="1"] { font-weight: 700; }
+.history-item[data-priority="2"] { font-weight: 500; }
+.history-item[data-priority="3"] { font-weight: 400; }
 
 /* ==============================
-   スマホ対応
+   スマホ
    ============================== */
 @media screen and (max-width: 600px) {
   .history {
-    margin: 24px auto;
     font-size: 0.8rem;
   }
 
+  .history h4,
   .history-item {
-    gap: 2px;
+    padding-left: 1.4em;
+    margin-left: 1.4em;
   }
 
   .history-item .day {
-    min-width: 1.1em;
+    width: 1.4em;
   }
 }
