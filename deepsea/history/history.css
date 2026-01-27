@@ -1,0 +1,88 @@
+/* ===== あゆみページ全体 ===== */
+.history {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-size: 0.85rem;
+}
+
+/* タイトル */
+.history-title {
+  margin-bottom: 30px;
+}
+
+/* ===== 年 ===== */
+.year-title {
+  margin-top: 40px;
+  font-size: 1.3rem;
+  border-left: 6px solid #1e90ff;
+  padding-left: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.year-title::after {
+  content: "▶";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+  font-size: 0.8rem;
+}
+
+.year-title.open::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.year-content {
+  display: block; /* 初期は全部開く */
+}
+
+/* ===== 月 ===== */
+.month-block {
+  margin-top: 18px;
+}
+
+.month-title {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+/* ===== 日リスト ===== */
+.day-list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* ===== 1行 ===== */
+.history-item {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  margin-left: 0.8em;
+}
+
+/* 日付 */
+.history-item .day {
+  min-width: 2em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 区切り線 */
+.history-item .bar {
+  color: #999;
+}
+
+/* 本文 */
+.history-item .text {
+  word-break: break-word;
+}
+
+/* ===== 重要度 ===== */
+.history-item[data-priority="1"] { font-weight: 1000; }
+.history-item[data-priority="2"] { font-weight: 700; }
+.history-item[data-priority="3"] { font-weight: 400; }
