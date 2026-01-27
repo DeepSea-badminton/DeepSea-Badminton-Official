@@ -6,29 +6,31 @@
   <title>チームのあゆみ｜ディープシー</title>
 
   <!-- 共通CSS -->
-  <link rel="stylesheet" href="../../css/style.css">
-  <!-- あゆみ専用CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- history専用CSS -->
   <link rel="stylesheet" href="history.css">
 
-  <!-- 共通JS -->
+  <!-- 共通JS（ヘッダー） -->
   <script src="../common/common.js" defer></script>
 </head>
 
 <body>
 
-  <!-- ★共通ヘッダー -->
+  <!-- 共通ヘッダー -->
   <div id="common-header"></div>
 
+  <!-- history専用レイアウト -->
   <main class="history">
-    <section>
-      <h2>チームのあゆみ</h2>
-      <div id="history-container"></div>
-    </section>
+    <h2 class="history-title">チームのあゆみ</h2>
+
+    <!-- JSで年表が入る -->
+    <div id="history-container"></div>
   </main>
 
-  <!-- フッター（将来用・今は空でもOK） -->
+  <!-- 共通フッター（表示されてもOK） -->
   <!-- <div id="common-footer"></div> -->
 
+  <!-- history専用JS -->
   <script src="history.js"></script>
 </body>
 </html>
