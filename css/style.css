@@ -104,7 +104,7 @@ li {
   margin-bottom: 8px;
 }
 
-//* ===== トップ選択画面（index.html） ===== */
+/* ===== トップ選択画面（index.html） ===== */
 .top-select {
   min-height: 100vh;
   display: flex;
