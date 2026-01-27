@@ -104,7 +104,7 @@ li {
   margin-bottom: 8px;
 }
 
-/* ===== トップ選択画面（index.html） ===== */
+//* ===== トップ選択画面（index.html） ===== */
 .top-select {
   min-height: 100vh;
   display: flex;
@@ -113,48 +113,37 @@ li {
   align-items: center;
   text-align: center;
 
-  background-color: #e9f5ec; /* ← 薄い緑（体育館コート感） */
+  background-color: #e9f5ec; /* 薄い緑（コート） */
   position: relative;
   overflow: hidden;
 }
 
-/* ===== バドミントンコートの白線 ===== */
+/* ===== バドミントンコートの線 ===== */
 .top-select::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 8%;
+  border: 3px solid rgba(255, 255, 255, 0.6); /* 外枠 */
 
+  /* センターライン（縦・横） */
   background:
-    /* 外枠（縦） */
-    linear-gradient(#ffffff 2px, transparent 2px),
-    linear-gradient(90deg, #ffffff 2px, transparent 2px),
-
-    /* センターライン（縦） */
     linear-gradient(
       90deg,
-      transparent 49.8%,
-      #ffffff 50%,
-      transparent 50.2%
+      transparent 49.5%,
+      rgba(255,255,255,0.6) 50%,
+      transparent 50.5%
     ),
-
-    /* ネットライン（横） */
     linear-gradient(
-      transparent 49.8%,
-      #ffffff 50%,
-      transparent 50.2%
+      transparent 49.5%,
+      rgba(255,255,255,0.6) 50%,
+      transparent 50.5%
     );
 
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-
-  opacity: 0.25; /* ← 白線をうっすら見せる */
   pointer-events: none;
+  z-index: 0;
 }
 
-/* ===== 中身を前面に ===== */
+/* ===== 中身を前に ===== */
 .top-select > * {
   position: relative;
   z-index: 1;
