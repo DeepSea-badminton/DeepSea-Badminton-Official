@@ -21,6 +21,10 @@
 .history-item {
   margin-bottom: 10px;
   line-height: 1.6;
+
+  white-space: nowrap;        /* 改行しない */
+  overflow: hidden;           /* はみ出た分を隠す */
+  text-overflow: ellipsis;    /* … を付ける */
 }
 
 /* 重要度による太さ */
