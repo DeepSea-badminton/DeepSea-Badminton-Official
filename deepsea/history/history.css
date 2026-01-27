@@ -79,7 +79,7 @@
   text-overflow: ellipsis;
 }
 
-/* ===== 重要度（逆設定：1が一番太い） ===== */
+/* ===== 重要度（1が一番太い） ===== */
 .history-item[data-priority="1"] {
   font-weight: 700;
 }
