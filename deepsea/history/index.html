@@ -10,29 +10,30 @@
   <!-- あゆみ専用CSS -->
   <link rel="stylesheet" href="history.css">
 
-  <!-- 共通ヘッダーJS -->
+  <!-- 共通ヘッダー -->
   <script src="../common/common.js" defer></script>
 </head>
 
 <body>
 
-  <!-- ★ 共通ヘッダー（ここに自動挿入される） -->
+  <!-- ★ 共通ヘッダー -->
   <div id="common-header"></div>
 
-  <!-- ★ main は他ページと同じ構造 -->
-  <main class="history">
-    <section>
-      <h2>チームのあゆみ</h2>
+  <main>
+    <h2>チームのあゆみ</h2>
 
-      <!-- JSがここに年表を描画 -->
-      <div id="history-container"></div>
-    </section>
+    <!-- JSで年表を描画 -->
+    <div id="history-container"></div>
+
+    <!-- 戻るリンク -->
+    <p class="back-link">
+      <a href="../index.html">← ディープシートップへ戻る</a>
+    </p>
   </main>
 
-  <!-- フッターは今は使わない（将来使うならここに div を置くだけ） -->
-  <!-- <div id="common-footer"></div> -->
+  <!-- フッターは使わない -->
 
-  <!-- あゆみ用JS -->
+  <!-- あゆみJS -->
   <script src="history.js"></script>
 </body>
 </html>
