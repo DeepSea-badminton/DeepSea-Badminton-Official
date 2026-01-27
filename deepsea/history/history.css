@@ -2,56 +2,51 @@
    チームのあゆみページ専用CSS
    ============================== */
 
-/* ページ全体（基準サイズを半分寄りに） */
+/* 全体 */
 .history {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
-
-  font-size: 0.8rem;   /* ★ 全体を一気に小さくする基準 */
+  font-size: 0.8rem;
 }
 
-/* ==============================
-   タイトル
-   ============================== */
+/* タイトル */
 .history-title {
   margin-bottom: 24px;
-  font-size: 1.1rem;   /* 元1.5rem → 縮小 */
+  font-size: 1.1rem;
   border-left: 4px solid #1e90ff;
   padding-left: 10px;
 }
 
 /* ==============================
-   年（クリック開閉）
+   年（開閉）
    ============================== */
 .year-title {
   margin-top: 32px;
-  font-size: 1rem;     /* 元1.25〜1.4 → 縮小 */
+  font-size: 1rem;
   border-left: 4px solid #1e90ff;
   padding-left: 10px;
   cursor: pointer;
   position: relative;
 }
 
-/* ▶ アイコン */
 .year-title::after {
   content: "▶";
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: transform 0.2s;
   font-size: 0.75rem;
+  transition: transform 0.2s;
 }
 
 .year-title.open::after {
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* 年の中身 */
 .year-content {
   display: none;
-  margin-left: 6px;
+  margin-left: 4px;   /* ★ 左寄せ */
 }
 
 .year-content.open {
@@ -62,28 +57,28 @@
    月
    ============================== */
 .history h4 {
-  margin: 14px 0 4px;
+  margin: 12px 0 4px;
   font-size: 0.85rem;
   font-weight: 600;
   color: #444;
 }
 
 /* ==============================
-   年表1行
+   年表1行（★ここが重要）
    ============================== */
 .history-item {
   display: grid;
-  grid-template-columns: 1.4em 0.8em 1fr;
-  column-gap: 0.25em;
+  grid-template-columns: 1.2em 0.6em 1fr;  /* ★ 日付をさらに左へ */
+  column-gap: 0.15em;
 
-  margin-bottom: 6px;
-  font-size: 0.75rem;   /* ★ 本文をかなり小さく */
+  margin-bottom: 5px;
+  font-size: 0.75rem;
   line-height: 1.4;
 
-  white-space: normal;  /* 切れない */
+  white-space: normal;
 }
 
-/* 日 */
+/* 日付 */
 .history-item .day {
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -100,30 +95,23 @@
 }
 
 /* ==============================
-   重要度（1が一番太い）
+   重要度
    ============================== */
 .history-item[data-priority="1"] { font-weight: 700; }
 .history-item[data-priority="2"] { font-weight: 500; }
 .history-item[data-priority="3"] { font-weight: 400; }
 
 /* ==============================
-   スマホ対応
+   スマホ
    ============================== */
 @media screen and (max-width: 600px) {
   .history {
-    margin: 24px auto;
     font-size: 0.75rem;
-  }
-
-  .history-title {
-    font-size: 1rem;
-  }
-
-  .year-title {
-    font-size: 0.95rem;
+    margin: 24px auto;
   }
 
   .history-item {
+    grid-template-columns: 1em 0.6em 1fr;  /* ★ スマホはさらに詰める */
     font-size: 0.7rem;
   }
 }
