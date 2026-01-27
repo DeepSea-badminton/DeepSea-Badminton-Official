@@ -1,3 +1,5 @@
+alert("common.js 読み込まれました");
+
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("common-header");
   const footer = document.getElementById("common-footer");
