@@ -131,10 +131,10 @@ li {
 
 .btn {
   display: inline-block;
-  padding: 18px 30px;
-  font-size: 5rem;
+  padding: 26px 44px;
+  font-size: 1.6rem;
   font-weight: bold;
-  border-radius: 12px;
+  border-radius: 16px;
   color: #fff;
 }
 
@@ -184,7 +184,7 @@ footer a {
   }
 
   .btn {
-    font-size: 1rem;
-    padding: 15px 20px;
+    font-size: 1.3rem;
+    padding: 20px 30px;
   }
 }
