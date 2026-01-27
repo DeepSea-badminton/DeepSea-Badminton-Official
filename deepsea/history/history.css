@@ -87,17 +87,22 @@
   word-break: break-word;
 }
 
-/* ===== 重要度 ===== */
+/* ===== 最重要 ===== */
 .history-item[data-priority="1"] {
-  font-weight: 900;
+  font-weight: 700;
   color: #000;
+  background: rgba(30, 144, 255, 0.08);
+  border-left: 4px solid #1e90ff;
+  padding-left: 6px;
 }
 
+/* ===== 通常 ===== */
 .history-item[data-priority="2"] {
-  font-weight: 650;
+  font-weight: 500;
   color: #333;
 }
 
+/* ===== 軽微 ===== */
 .history-item[data-priority="3"] {
   font-weight: 400;
   color: #666;
