@@ -52,7 +52,7 @@
   align-items: flex-start;
   gap: 6px;
 
-  margin-left: 1.2em;         /* ← 月の文字の下から開始 */
+  margin-left: 0.6em;         /* ← 月の文字の下から開始 */
   margin-bottom: 6px;
   line-height: 1.6;
 }
