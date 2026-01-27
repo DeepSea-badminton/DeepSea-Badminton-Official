@@ -106,12 +106,6 @@ function renderHistory() {
     });
   });
 
-  // 初期状態：最新年だけ開く
-  if (titles.length > 0) {
-    const last = titles.length - 1;
-    titles[last].classList.add("open");
-    contents[last].classList.add("open");
-  }
 }
 
 // 実行
