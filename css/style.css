@@ -234,3 +234,20 @@ footer a {
     padding: 20px 30px;
   }
 }
+
+/* ===== 共通ヘッダー強制 ===== */
+header {
+  width: 100%;
+  background: linear-gradient(135deg, #1e90ff, #0066cc);
+  color: #fff;
+}
+
+header nav {
+  display: flex;
+  width: 100%;
+}
+
+header nav a {
+  flex: 1;
+  text-align: center;
+}
