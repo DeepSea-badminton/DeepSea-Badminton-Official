@@ -43,40 +43,41 @@
   display: block;
 }
 
-/* ===== 月ブロック ===== */
+/* ===== 月 ===== */
 .month-block {
   margin-top: 18px;
 }
 
-/* 月 */
 .month-title {
   font-size: 0.95rem;
   color: #444;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  margin-left: 0;          /* ← 月を左へ */
 }
 
-/* 月の下から開始 */
+/* ★ ここが超重要 ★ */
+/* 月と日を同じ左基準にする */
 .day-list {
-  margin-left: 1.2em;
+  margin-left: 0;          /* ← 右ずれの元凶を消す */
   padding-left: 0;
 }
 
 /* ===== 1行 ===== */
 .history-item {
   display: flex;
-  gap: 6px;
+  gap: 4px;                /* 少し詰める */
   margin-bottom: 6px;
   line-height: 1.6;
 }
 
 /* 日付 */
 .history-item .day {
-  min-width: 1.8em;
+  min-width: 1.4em;        /* ← さらに左へ */
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-/* 線 */
+/* 縦線 */
 .history-item .bar {
   color: #999;
 }
