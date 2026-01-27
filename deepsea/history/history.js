@@ -40,19 +40,26 @@ function renderHistory() {
   const years = Object.keys(grouped).sort((a, b) => a - b);
 
   years.forEach(year => {
-    const yearSection = document.createElement("section");
+    const section = document.createElement("section");
 
+    // 年タイトル（クリック対象）
     const yearTitle = document.createElement("h3");
+    yearTitle.className = "year-title";
     yearTitle.textContent = `${year}年`;
-    yearSection.appendChild(yearTitle);
+    section.appendChild(yearTitle);
 
-    // 月：1 → 12
+    // 年の中身（開閉）
+    const yearContent = document.createElement("div");
+    yearContent.className = "year-content";
+    section.appendChild(yearContent);
+
+    // 月
     const months = Object.keys(grouped[year]).sort((a, b) => a - b);
 
     months.forEach(month => {
       const monthTitle = document.createElement("h4");
       monthTitle.textContent = `${month}月`;
-      yearSection.appendChild(monthTitle);
+      yearContent.appendChild(monthTitle);
 
       const ul = document.createElement("ul");
 
@@ -67,14 +74,12 @@ function renderHistory() {
 
         const day = new Date(item.date).getDate();
 
-        // 前の行と同じ日か？
         let showDay = true;
         if (index > 0) {
           const prevDay = new Date(events[index - 1].date).getDate();
           if (prevDay === day) showDay = false;
         }
 
-        // ★ 文字で揃えない。要素で分ける
         li.innerHTML = `
           <span class="day">${showDay ? day : ""}</span>
           <span class="bar">｜</span>
@@ -84,11 +89,29 @@ function renderHistory() {
         ul.appendChild(li);
       });
 
-      yearSection.appendChild(ul);
+      yearContent.appendChild(ul);
     });
 
-    container.appendChild(yearSection);
+    container.appendChild(section);
   });
+
+  // ===== 年をタップで開閉 =====
+  const titles = document.querySelectorAll(".year-title");
+  const contents = document.querySelectorAll(".year-content");
+
+  titles.forEach((title, i) => {
+    title.addEventListener("click", () => {
+      title.classList.toggle("open");
+      contents[i].classList.toggle("open");
+    });
+  });
+
+  // 初期状態：最新年だけ開く
+  if (titles.length > 0) {
+    const last = titles.length - 1;
+    titles[last].classList.add("open");
+    contents[last].classList.add("open");
+  }
 }
 
 // 実行
