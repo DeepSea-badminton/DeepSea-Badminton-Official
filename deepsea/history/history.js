@@ -17,96 +17,70 @@ const historyData = [
   { date: "2026-01-18", priority: 3, title: "調布市民ダブルス大会 MD3🥈" }
 ];
 
-// ===== 表示処理 =====
+// ===== 描画 =====
 function renderHistory() {
   const container = document.getElementById("history-container");
   container.innerHTML = "";
 
-  // 年 → 月 → 配列
   const grouped = {};
 
+  // 年 → 月 → 日
   historyData.forEach(item => {
     const d = new Date(item.date);
-    const year = d.getFullYear();
-    const month = d.getMonth() + 1;
+    const y = d.getFullYear();
+    const m = d.getMonth() + 1;
+    const day = d.getDate();
 
-    if (!grouped[year]) grouped[year] = {};
-    if (!grouped[year][month]) grouped[year][month] = [];
+    grouped[y] ??= {};
+    grouped[y][m] ??= {};
+    grouped[y][m][day] ??= [];
 
-    grouped[year][month].push(item);
+    grouped[y][m][day].push(item);
   });
 
-  // 年：古い順
-  const years = Object.keys(grouped).sort((a, b) => a - b);
+  Object.keys(grouped).sort((a, b) => a - b).forEach(year => {
+    const yearBlock = document.createElement("section");
 
-  years.forEach(year => {
-    const section = document.createElement("section");
+    yearBlock.innerHTML = `
+      <h3 class="year-title open">${year}年</h3>
+      <div class="year-content open"></div>
+    `;
 
-    // 年タイトル（クリック対象）
-    const yearTitle = document.createElement("h3");
-    yearTitle.className = "year-title";
-    yearTitle.textContent = `${year}年`;
-    section.appendChild(yearTitle);
+    const yearTitle = yearBlock.querySelector(".year-title");
+    const yearContent = yearBlock.querySelector(".year-content");
 
-    // 年の中身（開閉）
-    const yearContent = document.createElement("div");
-    yearContent.className = "year-content";
-    section.appendChild(yearContent);
+    // 開閉
+    yearTitle.addEventListener("click", () => {
+      yearTitle.classList.toggle("open");
+      yearContent.classList.toggle("open");
+    });
 
-    // 月
-    const months = Object.keys(grouped[year]).sort((a, b) => a - b);
+    Object.keys(grouped[year]).sort((a, b) => a - b).forEach(month => {
+      const monthEl = document.createElement("div");
+      monthEl.innerHTML = `<h4>${month}月</h4><ul></ul>`;
+      const ul = monthEl.querySelector("ul");
 
-    months.forEach(month => {
-      const monthTitle = document.createElement("h4");
-      monthTitle.textContent = `${month}月`;
-      yearContent.appendChild(monthTitle);
+      Object.keys(grouped[year][month]).sort((a, b) => a - b).forEach(day => {
+        grouped[year][month][day].forEach((item, i) => {
+          const li = document.createElement("li");
+          li.className = "history-item";
+          li.dataset.priority = item.priority;
 
-      const ul = document.createElement("ul");
+          li.innerHTML = `
+            <span class="day">${i === 0 ? day : ""}</span>
+            <span class="bar">｜</span>
+            <span class="text">${item.title}</span>
+          `;
 
-      const events = grouped[year][month].sort(
-        (a, b) => new Date(a.date) - new Date(b.date)
-      );
-
-      events.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.className = "history-item";
-        li.dataset.priority = item.priority;
-
-        const day = new Date(item.date).getDate();
-
-        let showDay = true;
-        if (index > 0) {
-          const prevDay = new Date(events[index - 1].date).getDate();
-          if (prevDay === day) showDay = false;
-        }
-
-        li.innerHTML = `
-          <span class="day">${showDay ? day : ""}</span>
-          <span class="bar">｜</span>
-          <span class="text">${item.title}</span>
-        `;
-
-        ul.appendChild(li);
+          ul.appendChild(li);
+        });
       });
 
-      yearContent.appendChild(ul);
+      yearContent.appendChild(monthEl);
     });
 
-    container.appendChild(section);
+    container.appendChild(yearBlock);
   });
-
-  // ===== 年をタップで開閉 =====
-  const titles = document.querySelectorAll(".year-title");
-  const contents = document.querySelectorAll(".year-content");
-
-  titles.forEach((title, i) => {
-    title.addEventListener("click", () => {
-      title.classList.toggle("open");
-      contents[i].classList.toggle("open");
-    });
-  });
-
 }
 
-// 実行
 renderHistory();
