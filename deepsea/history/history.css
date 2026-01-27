@@ -1,31 +1,17 @@
-/* ==============================
-   チームのあゆみページ専用CSS
-   ============================== */
-
-/* 全体 */
+/* ===== あゆみページ ===== */
 .history {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
-  font-size: 0.8rem;
+  font-size: 0.85rem; /* 全体少し小さく */
 }
 
-/* タイトル */
-.history-title {
-  margin-bottom: 24px;
-  font-size: 1.1rem;
-  border-left: 4px solid #1e90ff;
-  padding-left: 10px;
-}
-
-/* ==============================
-   年（開閉）
-   ============================== */
+/* ===== 年見出し ===== */
 .year-title {
-  margin-top: 32px;
-  font-size: 1rem;
-  border-left: 4px solid #1e90ff;
-  padding-left: 10px;
+  margin-top: 40px;
+  font-size: 1.3rem;
+  border-left: 6px solid #1e90ff;
+  padding-left: 12px;
   cursor: pointer;
   position: relative;
 }
@@ -36,57 +22,51 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.75rem;
   transition: transform 0.2s;
+  font-size: 0.8rem;
 }
 
 .year-title.open::after {
   transform: translateY(-50%) rotate(90deg);
 }
 
+/* ===== 年の中身 ===== */
 .year-content {
   display: none;
-  margin-left: 4px;   /* ★ 左寄せ */
 }
 
 .year-content.open {
   display: block;
 }
 
-/* ==============================
-   月
-   ============================== */
+/* ===== 月 ===== */
 .history h4 {
-  margin: 12px 0 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  margin: 20px 0 6px;
+  font-size: 0.95rem;
   color: #444;
 }
 
-/* ==============================
-   年表1行（★ここが重要）
-   ============================== */
+/* ===== 年表1行 ===== */
 .history-item {
-  display: grid;
-  grid-template-columns: 1.2em 0.6em 1fr;  /* ★ 日付をさらに左へ */
-  column-gap: 0.15em;
+  display: flex;              /* ← grid をやめる */
+  align-items: flex-start;
+  gap: 6px;
 
-  margin-bottom: 5px;
-  font-size: 0.75rem;
-  line-height: 1.4;
-
-  white-space: normal;
+  margin-left: 1.2em;         /* ← 月の文字の下から開始 */
+  margin-bottom: 6px;
+  line-height: 1.6;
 }
 
 /* 日付 */
 .history-item .day {
+  min-width: 2em;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
 /* 縦線 */
 .history-item .bar {
-  text-align: center;
+  color: #999;
 }
 
 /* 本文 */
@@ -94,24 +74,7 @@
   word-break: break-word;
 }
 
-/* ==============================
-   重要度
-   ============================== */
+/* ===== 重要度 ===== */
 .history-item[data-priority="1"] { font-weight: 700; }
 .history-item[data-priority="2"] { font-weight: 500; }
 .history-item[data-priority="3"] { font-weight: 400; }
-
-/* ==============================
-   スマホ
-   ============================== */
-@media screen and (max-width: 600px) {
-  .history {
-    font-size: 0.75rem;
-    margin: 24px auto;
-  }
-
-  .history-item {
-    grid-template-columns: 1em 0.6em 1fr;  /* ★ スマホはさらに詰める */
-    font-size: 0.7rem;
-  }
-}
