@@ -1,12 +1,25 @@
-/* ===== あゆみページ ===== */
-main {
+/* =========================
+   historyページ専用
+========================= */
+
+/* 共通mainのカード化を無効 */
+.history {
   max-width: 900px;
   margin: 40px auto;
+  padding: 0;
 }
 
-/* 年見出し */
+/* タイトル */
+.history-title {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  border-left: 6px solid #1e90ff;
+  padding-left: 12px;
+}
+
+/* ===== 年見出し ===== */
 .year-title {
-  margin-top: 40px;
+  margin-top: 32px;
   font-size: 1.4rem;
   border-left: 6px solid #1e90ff;
   padding-left: 12px;
@@ -31,16 +44,11 @@ main {
 
 /* 年の中身 */
 .year-content {
-  display: none;
   margin-left: 6px;
 }
 
-.year-content.open {
-  display: block;
-}
-
 /* 月 */
-main h4 {
+.history h4 {
   margin: 18px 0 6px;
   font-size: 1.05rem;
   color: #444;
@@ -49,7 +57,7 @@ main h4 {
 /* 1行 */
 .history-item {
   display: grid;
-  grid-template-columns: 1.6em 1em 1fr;
+  grid-template-columns: 1.8em 1em 1fr;
   column-gap: 0.2em;
   margin-bottom: 8px;
   line-height: 1.6;
@@ -60,6 +68,7 @@ main h4 {
 .history-item .day {
   text-align: right;
   font-variant-numeric: tabular-nums;
+  font-weight: 600;
 }
 
 /* 線 */
