@@ -10,7 +10,7 @@
   <!-- history専用CSS -->
   <link rel="stylesheet" href="history.css">
 
-  <!-- 共通JS（ヘッダー） -->
+  <!-- 共通ヘッダー -->
   <script src="../common/common.js" defer></script>
 </head>
 
@@ -19,15 +19,12 @@
   <!-- 共通ヘッダー -->
   <div id="common-header"></div>
 
-  <!-- ★ main は共通レイアウト -->
-  <main>
-    <!-- ★ section がカード -->
-    <section class="history">
-      <h2>チームのあゆみ</h2>
+  <!-- history専用レイアウト -->
+  <main class="history">
+    <h2 class="history-title">チームのあゆみ</h2>
 
-      <!-- JSで年表が入る -->
-      <div id="history-container"></div>
-    </section>
+    <!-- JSで年表が入る -->
+    <div id="history-container"></div>
   </main>
 
   <!-- history専用JS -->
