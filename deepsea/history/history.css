@@ -83,6 +83,6 @@
 }
 
 /* ===== 重要度 ===== */
-.history-item[data-priority="1"] { font-weight: 1000; }
-.history-item[data-priority="2"] { font-weight: 700; }
+.history-item[data-priority="1"] { font-weight: 2000; }
+.history-item[data-priority="2"] { font-weight: 1000; }
 .history-item[data-priority="3"] { font-weight: 400; }
