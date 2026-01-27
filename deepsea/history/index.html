@@ -1,93 +1,43 @@
-/* ===== あゆみページ ===== */
-.history {
-  max-width: 800px;
-  margin: 0 auto;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>チームのあゆみ｜ディープシー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* ===== 年見出し（開閉） ===== */
-.year-title {
-  margin-top: 40px;
-  font-size: 1.3rem;
-  border-left: 6px solid #1e90ff;
-  padding-left: 12px;
-  cursor: pointer;
-  position: relative;
-}
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- あゆみ専用CSS -->
+  <link rel="stylesheet" href="history.css">
+</head>
 
-/* ▶ アイコン */
-.year-title::after {
-  content: "▶";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.2s;
-  font-size: 0.9rem;
-}
+<body>
 
-/* 開いているとき */
-.year-title.open::after {
-  transform: translateY(-50%) rotate(90deg);
-}
+  <!-- ===== ヘッダー（他ページと共通） ===== -->
+  <header>
+    <h1>ディープシー</h1>
+    <nav>
+      <a href="../index.html">トップ</a>
+      <a href="../schedule.html">練習日程</a>
+      <a href="index.html">チームのあゆみ</a>
+      <a href="../contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-/* 年の中身 */
-.year-content {
-  display: none;
-  margin-left: 10px;
-}
+  <!-- ===== メイン ===== -->
+  <main class="history">
+    <h2>チームのあゆみ</h2>
 
-.year-content.open {
-  display: block;
-}
+    <!-- JSで年表が入る -->
+    <div id="history-container"></div>
+  </main>
 
-/* ===== 月見出し ===== */
-.history h4 {
-  margin: 20px 0 8px;
-  font-size: 1.05rem;
-  color: #444;
-  font-weight: 600;
-}
+  <!-- ===== フッター ===== -->
+  <footer>
+    <a href="../index.html">← ディープシートップへ戻る</a>
+  </footer>
 
-/* ===== 年表1行 ===== */
-.history-item {
-  display: grid;
-  grid-template-columns: 2.5em 1em 1fr;
-  column-gap: 0.2em;
-
-  margin-bottom: 10px;
-  line-height: 1.6;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* 日付 */
-.history-item .day {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-/* 縦線 */
-.history-item .bar {
-  text-align: center;
-}
-
-/* 本文 */
-.history-item .text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* ===== 重要度（あなたの設計どおり） ===== */
-.history-item[data-priority="1"] {
-  font-weight: 700; /* 重要 */
-}
-
-.history-item[data-priority="2"] {
-  font-weight: 500; /* 通常 */
-}
-
-.history-item[data-priority="3"] {
-  font-weight: 400; /* 軽微 */
-}
+  <!-- JS -->
+  <script src="history.js"></script>
+</body>
+</html>
