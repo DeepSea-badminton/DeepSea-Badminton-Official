@@ -35,6 +35,10 @@
   text-overflow: ellipsis;    /* … を付ける */
 }
 
+.history-item {
+  font-variant-numeric: tabular-nums;
+}
+
 /* 重要度による太さ */
 .history-item[data-priority="1"] {
   font-weight: 700; /* 重要 */
