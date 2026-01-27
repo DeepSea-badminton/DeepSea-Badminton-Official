@@ -51,7 +51,7 @@
 /* ===== 年表1行 ===== */
 .history-item {
   display: grid;
-  grid-template-columns: 2.5em 1em 1fr;
+  grid-template-columns: 1.6em 1em 1fr;
   column-gap: 0.2em;
 
   margin-bottom: 10px;
