@@ -79,15 +79,15 @@
   text-overflow: ellipsis;
 }
 
-/* ===== 重要度（あなたの設計どおり） ===== */
+/* ===== 重要度（逆設定：1が一番太い） ===== */
 .history-item[data-priority="1"] {
-  font-weight: 700; /* 重要 */
+  font-weight: 700;
 }
 
 .history-item[data-priority="2"] {
-  font-weight: 500; /* 通常 */
+  font-weight: 500;
 }
 
 .history-item[data-priority="3"] {
-  font-weight: 400; /* 軽微 */
+  font-weight: 400;
 }
