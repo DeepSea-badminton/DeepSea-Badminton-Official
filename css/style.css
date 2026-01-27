@@ -1,4 +1,6 @@
-/* ===== 全体設定 ===== */
+/* =====================================================
+   全体設定
+===================================================== */
 * {
   box-sizing: border-box;
 }
@@ -12,7 +14,9 @@ body {
   line-height: 1.7;
 }
 
-/* ===== リンク ===== */
+/* =====================================================
+   リンク
+===================================================== */
 a {
   color: #1e90ff;
   text-decoration: none;
@@ -22,19 +26,24 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== 共通ヘッダー（強制） ===== */
+/* =====================================================
+   共通ヘッダー（JSで挿入される前提）
+===================================================== */
 .site-header {
   background: linear-gradient(135deg, #1e90ff, #0066cc);
   color: #fff;
-  padding: 36px 20px 24px;
+  padding: 40px 20px 26px; /* ← 少し高さアップ */
 }
 
+/* タイトル */
 .site-header h1 {
   margin: 0 0 18px 0;
-  font-size: 1.9rem;
+  font-size: 2.1rem;       /* ← ★ここを上げた */
   text-align: center;
+  white-space: nowrap;     /* 1行固定 */
 }
 
+/* ナビ */
 .site-nav {
   display: flex;
   width: 100%;
@@ -52,14 +61,18 @@ a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ===== メイン ===== */
+/* =====================================================
+   メイン
+===================================================== */
 main {
   max-width: 960px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-/* ===== セクション ===== */
+/* =====================================================
+   セクション（カード）
+===================================================== */
 section {
   background: #fff;
   border-radius: 14px;
@@ -68,7 +81,9 @@ section {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== 見出し ===== */
+/* =====================================================
+   見出し
+===================================================== */
 h2 {
   margin: 0 0 20px;
   font-size: 1.4rem;
@@ -83,7 +98,9 @@ h3 {
   color: #1e90ff;
 }
 
-/* ===== リスト ===== */
+/* =====================================================
+   リスト
+===================================================== */
 ul {
   padding-left: 22px;
 }
@@ -92,9 +109,9 @@ li {
   margin-bottom: 8px;
 }
 
-/* =========================================================
+/* =====================================================
    トップ選択画面（正しいバドミントンコート）
-========================================================= */
+===================================================== */
 .top-select {
   min-height: 100vh;
   display: flex;
@@ -108,7 +125,7 @@ li {
   overflow: hidden;
 }
 
-/* ===== バドミントンコート線 ===== */
+/* バドミントンコート線 */
 .top-select::before {
   content: "";
   position: absolute;
@@ -196,7 +213,7 @@ li {
   z-index: 1;
 }
 
-/* ===== タイトル ===== */
+/* タイトル */
 .top-select h1 {
   font-size: 2rem;
   margin-bottom: 12px;
@@ -206,7 +223,7 @@ li {
   margin-bottom: 30px;
 }
 
-/* ===== ボタン ===== */
+/* ボタン */
 .select-buttons {
   display: flex;
   flex-direction: column;
@@ -238,7 +255,9 @@ li {
   margin-top: 6px;
 }
 
-/* ===== フッター ===== */
+/* =====================================================
+   フッター
+===================================================== */
 footer {
   text-align: center;
   padding: 30px 20px;
@@ -249,17 +268,54 @@ footer a {
   font-weight: bold;
 }
 
-/* ===== スマホ対応 ===== */
+/* =====================================================
+   SNSボタン
+===================================================== */
+.sns-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.sns-btn.instagram {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: #fff;
+}
+
+.sns-btn:hover {
+  opacity: 0.85;
+}
+
+.sns-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* =====================================================
+   スマホ対応
+===================================================== */
 @media screen and (max-width: 600px) {
-  header {
-    padding: 28px 12px 20px;
+  .site-header {
+    padding: 30px 12px 22px;
   }
 
-  header h1 {
-    font-size: 1.2rem;
+  .site-header h1 {
+    font-size: 1.6rem; /* ← スマホでも1行 */
   }
 
-  nav a {
+  .site-nav a {
     font-size: 0.95rem;
     padding: 12px 0;
   }
@@ -280,40 +336,4 @@ footer a {
     font-size: 1.3rem;
     padding: 20px 30px;
   }
-}
-
-/* ===== SNSボタン ===== */
-.sns-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-/* Instagram */
-.sns-btn.instagram {
-  background: linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888
-  );
-  color: #fff;
-}
-
-.sns-btn:hover {
-  opacity: 0.85;
-}
-
-/* アイコン */
-.sns-icon {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0) invert(1);
 }
