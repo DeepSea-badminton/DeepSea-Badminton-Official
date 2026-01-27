@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
    * ★ GitHub Pages（プロジェクトページ）用ベースパス
+   *   https://ユーザー名.github.io/DeepSea-Badminton-Official/
    */
   const BASE = "/DeepSea-Badminton-Official";
 
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (header) {
     header.innerHTML = `
       <header class="site-header">
-        <h1>ディープシー</h1>
+        <h1 class="site-title">ディープシーバドミントンクラブ</h1>
         <nav class="site-nav">
           <a href="${BASE}/deepsea/index.html">トップ</a>
           <a href="${BASE}/deepsea/schedule.html">練習日程</a>
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  /* ===== 共通フッター ===== */
+  /* ===== 共通フッター（今後用） ===== */
   if (footer) {
     footer.innerHTML = `
       <footer class="site-footer">
