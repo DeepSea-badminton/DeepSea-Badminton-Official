@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <header>
         <h1>ディープシー</h1>
         <nav>
-          <a href="/deepsea/index.html">トップ</a>
-          <a href="/deepsea/schedule.html">練習日程</a>
-          <a href="/deepsea/history/index.html">チームのあゆみ</a>
-          <a href="/deepsea/contact.html">お問い合わせ</a>
+          <a href="../index.html">トップ</a>
+          <a href="../schedule.html">練習日程</a>
+          <a href="../history/index.html">チームのあゆみ</a>
+          <a href="../contact.html">お問い合わせ</a>
         </nav>
       </header>
     `;
