@@ -328,6 +328,10 @@ main.history .history-item .text {
 }
 
 /* 重要度 */
-main.history .history-item[data-priority="1"] { font-weight: 700; }
-main.history .history-item[data-priority="2"] { font-weight: 500; }
+main.history .history-item[data-priority="1"] { font-weight: 1000; }
+main.history .history-item[data-priority="2"] { font-weight: 700; }
 main.history .history-item[data-priority="3"] { font-weight: 400; }
+
+body {
+  outline: 5px solid red;
+}
