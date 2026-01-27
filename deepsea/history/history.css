@@ -1,5 +1,5 @@
 /* ===== あゆみページ ===== */
-.history {
+main {
   max-width: 900px;
   margin: 40px auto;
 }
@@ -40,7 +40,7 @@
 }
 
 /* 月 */
-.history h4 {
+main h4 {
   margin: 18px 0 6px;
   font-size: 1.05rem;
   color: #444;
@@ -51,11 +51,9 @@
   display: grid;
   grid-template-columns: 1.6em 1em 1fr;
   column-gap: 0.2em;
-
   margin-bottom: 8px;
   line-height: 1.6;
-
-  white-space: normal;   /* ← 切れない */
+  white-space: normal;
 }
 
 /* 日 */
@@ -74,7 +72,7 @@
   word-break: break-word;
 }
 
-/* 重要度（1が一番太い） */
+/* 重要度 */
 .history-item[data-priority="1"] { font-weight: 700; }
 .history-item[data-priority="2"] { font-weight: 500; }
 .history-item[data-priority="3"] { font-weight: 400; }
