@@ -35,8 +35,35 @@
   text-overflow: ellipsis;    /* … を付ける */
 }
 
+/* 1行を3列で固定 */
 .history-item {
+  display: grid;
+  grid-template-columns: 2.5em 1em 1fr;
+  column-gap: 0.2em;
+
+  margin-bottom: 10px;
+  line-height: 1.6;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 日付 */
+.history-item .day {
+  text-align: right;
   font-variant-numeric: tabular-nums;
+}
+
+/* 縦線 */
+.history-item .bar {
+  text-align: center;
+}
+
+/* 本文 */
+.history-item .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 重要度による太さ */
