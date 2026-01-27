@@ -1,0 +1,37 @@
+/* ===== あゆみページ ===== */
+.history {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 年見出し */
+.history h3 {
+  margin-top: 40px;
+  font-size: 1.3rem;
+  border-left: 6px solid #1e90ff;
+  padding-left: 12px;
+}
+
+/* リスト */
+.history ul {
+  margin-top: 15px;
+}
+
+/* 共通 */
+.history-item {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* 重要度による太さ */
+.history-item[data-priority="3"] {
+  font-weight: 700; /* 重要 */
+}
+
+.history-item[data-priority="2"] {
+  font-weight: 500; /* 通常 */
+}
+
+.history-item[data-priority="1"] {
+  font-weight: 400; /* 軽微 */
+}
