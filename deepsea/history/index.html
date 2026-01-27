@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>チームのあゆみ｜ディープシー</title>
 
-  <!-- 共通CSS（ここだけ） -->
-  <link rel="stylesheet" href="/deepsea/css/style.css">
+  <!-- 共通CSS（ヘッダー用） -->
+  <link rel="stylesheet" href="../css/style.css">
 
-  <!-- 共通JS（ヘッダー注入） -->
-  <script src="/deepsea/common/common.js" defer></script>
+  <!-- history専用CSS -->
+  <link rel="stylesheet" href="history.css">
+
+  <!-- 共通ヘッダー -->
+  <script src="../common/common.js" defer></script>
 </head>
 
 <body>
@@ -17,18 +20,12 @@
   <!-- 共通ヘッダー -->
   <div id="common-header"></div>
 
-  <!-- history専用 main -->
+  <!-- あゆみ専用 -->
   <main class="history">
     <h2 class="history-title">チームのあゆみ</h2>
-
-    <!-- JSで年表がここに入る -->
     <div id="history-container"></div>
   </main>
 
-  <!-- 共通フッター（今後用・無くてもOK） -->
-  <!-- <div id="common-footer"></div> -->
-
-  <!-- history専用JS -->
   <script src="history.js"></script>
 </body>
 </html>
