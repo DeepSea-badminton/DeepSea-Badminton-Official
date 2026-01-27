@@ -26,26 +26,30 @@ a:hover {
 header {
   background: linear-gradient(135deg, #1e90ff, #0066cc);
   color: #fff;
-  padding: 25px 20px;
+  padding: 36px 20px 24px;   /* ← 高さアップ */
 }
 
+/* タイトル */
 header h1 {
-  margin: 0 0 15px 0;
-  font-size: 1.6rem;
+  margin: 0 0 18px 0;
+  font-size: 1.9rem;        /* ← 少し大きく */
+  text-align: center;
 }
 
 /* ===== ナビ ===== */
 nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  width: 100%;              /* 端から端まで */
+  gap: 0;
 }
 
 nav a {
+  flex: 1;                  /* 均等割り */
+  text-align: center;
   color: #fff;
   font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 14px 0;          /* タップしやすく */
+  border-radius: 0;
 }
 
 nav a:hover {
@@ -104,7 +108,7 @@ li {
   margin-bottom: 8px;
 }
 
-/* ===== トップ選択画面（index.html） ===== */
+/* ===== トップ選択画面 ===== */
 .top-select {
   min-height: 100vh;
   display: flex;
@@ -113,19 +117,17 @@ li {
   align-items: center;
   text-align: center;
 
-  background-color: #e9f5ec; /* 薄い緑（コート） */
+  background-color: #e9f5ec;
   position: relative;
   overflow: hidden;
 }
 
-/* ===== バドミントンコートの線 ===== */
+/* コート線 */
 .top-select::before {
   content: "";
   position: absolute;
   inset: 8%;
-  border: 3px solid rgba(255, 255, 255, 0.6); /* 外枠 */
-
-  /* センターライン（縦・横） */
+  border: 3px solid rgba(255, 255, 255, 0.6);
   background:
     linear-gradient(
       90deg,
@@ -138,37 +140,20 @@ li {
       rgba(255,255,255,0.6) 50%,
       transparent 50.5%
     );
-
   pointer-events: none;
   z-index: 0;
 }
 
-/* ===== 中身を前に ===== */
 .top-select > * {
   position: relative;
   z-index: 1;
 }
 
-/* ===== タイトル ===== */
 .top-select h1 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
-/* ===== 説明文 ===== */
-.subtitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.subtext {
-  font-size: 0.95rem;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-/* ===== ボタン配置 ===== */
 .select-buttons {
   display: flex;
   flex-direction: column;
@@ -184,22 +169,22 @@ li {
   color: #fff;
 }
 
-/* ===== チーム選択ボタンの説明文 ===== */
-.btn-sub {
-  display: block;
-  font-size: 0.9rem;   /* 小さめ */
-  color: #000;         /* 黒字 */
-  font-weight: normal;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
 .btn.deepsea {
   background: linear-gradient(135deg, #1e90ff, #004aad);
 }
 
+.btn.frilledfish,
 .btn.frilledshark {
   background: linear-gradient(135deg, #4fc3f7, #0288d1);
+}
+
+.btn-sub {
+  display: block;
+  font-size: 0.9rem;
+  color: #000;
+  font-weight: normal;
+  margin-top: 6px;
+  line-height: 1.4;
 }
 
 .btn:hover {
@@ -219,16 +204,17 @@ footer a {
 
 /* ===== スマホ対応 ===== */
 @media screen and (max-width: 600px) {
+  header {
+    padding: 28px 12px 20px;
+  }
+
   header h1 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
-  .top-select h1 {
-    font-size: 1.2rem;
-  }
-
-  nav {
-    gap: 10px;
+  nav a {
+    font-size: 0.95rem;
+    padding: 12px 0;
   }
 
   main {
