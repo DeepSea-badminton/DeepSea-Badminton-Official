@@ -39,35 +39,41 @@ function renderHistory() {
   });
 
   Object.keys(grouped).sort((a, b) => a - b).forEach(year => {
-    const yearBlock = document.createElement("section");
+    const yearSection = document.createElement("section");
 
-    yearBlock.innerHTML = `
+    yearSection.innerHTML = `
       <h3 class="year-title open">${year}年</h3>
       <div class="year-content open"></div>
     `;
 
-    const yearTitle = yearBlock.querySelector(".year-title");
-    const yearContent = yearBlock.querySelector(".year-content");
+    const yearTitle = yearSection.querySelector(".year-title");
+    const yearContent = yearSection.querySelector(".year-content");
 
-    // 開閉
+    // 年の開閉
     yearTitle.addEventListener("click", () => {
       yearTitle.classList.toggle("open");
       yearContent.classList.toggle("open");
     });
 
     Object.keys(grouped[year]).sort((a, b) => a - b).forEach(month => {
-      const monthEl = document.createElement("div");
-      monthEl.innerHTML = `<h4>${month}月</h4><ul></ul>`;
-      const ul = monthEl.querySelector("ul");
+      const monthBlock = document.createElement("div");
+      monthBlock.className = "month-block";
+
+      monthBlock.innerHTML = `
+        <h4 class="month-title">${month}月</h4>
+        <ul class="day-list"></ul>
+      `;
+
+      const ul = monthBlock.querySelector(".day-list");
 
       Object.keys(grouped[year][month]).sort((a, b) => a - b).forEach(day => {
-        grouped[year][month][day].forEach((item, i) => {
+        grouped[year][month][day].forEach((item, index) => {
           const li = document.createElement("li");
           li.className = "history-item";
           li.dataset.priority = item.priority;
 
           li.innerHTML = `
-            <span class="day">${i === 0 ? day : ""}</span>
+            <span class="day">${index === 0 ? day : ""}</span>
             <span class="bar">｜</span>
             <span class="text">${item.title}</span>
           `;
@@ -76,10 +82,10 @@ function renderHistory() {
         });
       });
 
-      yearContent.appendChild(monthEl);
+      yearContent.appendChild(monthBlock);
     });
 
-    container.appendChild(yearBlock);
+    container.appendChild(yearSection);
   });
 }
 
