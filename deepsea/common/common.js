@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (header) {
     header.innerHTML = `
       <header class="site-header">
-        <h1 class="site-title">ディープシーバドミントンクラブ</h1>
+        <h1 class="site-title">ディープシー</h1>
         <nav class="site-nav">
           <a href="${BASE}/deepsea/index.html">トップ</a>
           <a href="${BASE}/deepsea/schedule.html">練習日程</a>
