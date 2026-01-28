@@ -2,27 +2,109 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>スケジュール｜ラブカ</title>
+  <title>練習日程｜ラブカ🏸</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="common/common.js" defer></script>
 </head>
 
 <body>
-<header>
-  <h1>ラブカ 🏸</h1>
-  <nav>
-    <a href="index.html">トップ</a>
-    <a href="schedule.html">練習日程</a>
-    <a href="contact.html">お問い合わせ</a>
-  </nav>
-</header>
 
-<main>
-  <h2>練習日程</h2>
-  <p>
-    活動日：毎週○曜日<br>
-    時間：○時〜○時<br>
-    場所：○○体育館
-  </p>
-</main>
+  <!-- 共通ヘッダー -->
+  <div id="common-header"></div>
+
+  <main>
+
+    <!-- ===== 月別練習日程（自動生成） ===== -->
+    <section id="scheduleArea"></section>
+
+    <!-- ===== 共通案内（毎月固定） ===== -->
+    <section>
+      <h2>🏫 学生の参加について</h2>
+      <p>
+        中学生まで:保護者の方の送迎をお願いしています。<br>
+        高校生：保護者の方に必ず許可をとった上でお願いします。<br>
+        また、夜の練習は22時までとさせていただいています。
+      </p>
+    </section>
+
+    <section>
+      <h2>👟 練習（個人開放）参加時の持ち物</h2>
+      <ul>
+        <li>ラケット（500円で貸出有。限りがあるので事前に連絡下さい。）</li>
+        <li>体育館履きまたはシューズ</li>
+        <li>スポーツウェア</li>
+        <li>飲み物</li>
+        <li>汗拭きタオル</li>
+        <li>チーム参加費（ビジターは600円）</li>
+        <li>体育館代（各体育館のホームページより確認してください）</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>注意事項とお願い</h2>
+      <ul>
+        <li>個人開放では体育館の混み具合により、急遽最大数時間程度の待ち時間が発生したり、
+            他の体育館に移動したり、中止になる可能性がありますのでご了承ください。</li>
+        <li>当チームの現状、基本的に人数はあまり多くないですので、
+            開催可否に直結する場合があります。当日のドタキャンは極力お控えください。</li>
+        <li>参加表明いただき了承した場合でも、人数が集まらない場合は
+            前日中までに中止判断することがございますのでご了承ください。</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== JS直書き ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var area = document.getElementById("scheduleArea");
+      if (!area) return;
+
+      fetch("schedule.txt")
+        .then(function (res) {
+          return res.text();
+        })
+        .then(function (text) {
+          render(text);
+        })
+        .catch(function () {
+          area.textContent = "練習日程を読み込めませんでした。";
+        });
+
+      function render(text) {
+        var lines = text.split("\n");
+        var ul = null;
+
+        lines.forEach(function (line) {
+          var trimmed = line.trim();
+
+          // [n月] の検出
+          var match = trimmed.match(/^\[(\d{1,2})月\]$/);
+          if (match) {
+            var month = match[1];
+
+            var section = document.createElement("section");
+            var h2 = document.createElement("h2");
+            h2.textContent = "練習日程（" + month + "月）";
+
+            ul = document.createElement("ul");
+
+            section.appendChild(h2);
+            section.appendChild(ul);
+            area.appendChild(section);
+            return;
+          }
+
+          // 日程行
+          if (trimmed && ul) {
+            var li = document.createElement("li");
+            li.textContent = trimmed;
+            ul.appendChild(li);
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
