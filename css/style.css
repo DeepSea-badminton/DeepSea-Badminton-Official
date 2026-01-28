@@ -169,13 +169,30 @@ li {
       transparent 94.1%
     ),
 
-    /* センターライン（前サービスまで） */
-    linear-gradient(
-      to right,
-      transparent 49.7%,
-      rgba(255,255,255,0.95) 50%,
-      transparent 50.3%
-    ),
+    /* センターライン（上側：前サービスラインまで） */
+linear-gradient(
+  to bottom,
+  transparent 0%,
+  transparent 31.6%,
+  rgba(255,255,255,0.95) 31.9%,
+  transparent 32.2%
+),
+
+/* センターライン（下側：前サービスラインまで） */
+linear-gradient(
+  to bottom,
+  transparent 68.1%,
+  rgba(255,255,255,0.95) 68.4%,
+  transparent 100%
+),
+
+/* センターラインの横位置（中央だけに表示） */
+linear-gradient(
+  to right,
+  transparent 49.7%,
+  rgba(255,255,255,0.95) 50%,
+  transparent 50.3%
+),
     linear-gradient(
       to bottom,
       transparent 0%,
