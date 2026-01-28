@@ -13,6 +13,7 @@ const historyData = [
   { date: "2025-12-16", priority: 3, title: "代表 ACL・半月板 手術" },
 
   // 2026年
+  { date:　"2026-01-28",　priority: 2,　title: "当ホームページ開設" }
 ];
 
 // ============================
