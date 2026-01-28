@@ -27,26 +27,23 @@ a:hover {
 }
 
 /* =====================================================
-   共通ヘッダー（JSで挿入される前提）
+   共通ヘッダー
 ===================================================== */
 .site-header {
   background: linear-gradient(135deg, #1e90ff, #0066cc);
   color: #fff;
-  padding: 40px 20px 26px; /* ← 少し高さアップ */
+  padding: 40px 20px 26px;
 }
 
-/* タイトル */
 .site-header h1 {
-  margin: 0 0 18px 0;
-  font-size: 2.1rem;       /* ← ★ここを上げた */
+  margin: 0 0 18px;
+  font-size: 2.1rem;
   text-align: center;
-  white-space: nowrap;     /* 1行固定 */
+  white-space: nowrap;
 }
 
-/* ナビ */
 .site-nav {
   display: flex;
-  width: 100%;
 }
 
 .site-nav a {
@@ -58,7 +55,7 @@ a:hover {
 }
 
 .site-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.2);
 }
 
 /* =====================================================
@@ -71,7 +68,7 @@ main {
 }
 
 /* =====================================================
-   セクション（カード）
+   セクション
 ===================================================== */
 section {
   background: #fff;
@@ -92,25 +89,13 @@ h2 {
 }
 
 h3 {
-  margin-top: 25px;
-  margin-bottom: 10px;
+  margin: 25px 0 10px;
   font-size: 1.1rem;
   color: #1e90ff;
 }
 
 /* =====================================================
-   リスト
-===================================================== */
-ul {
-  padding-left: 22px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* =====================================================
-   トップ選択画面（正しいバドミントンコート）
+   トップ選択画面（バドミントンコート）
 ===================================================== */
 .top-select {
   min-height: 100vh;
@@ -119,18 +104,17 @@ li {
   justify-content: center;
   align-items: center;
   text-align: center;
-
   background-color: #e9f5ec;
   position: relative;
   overflow: hidden;
 }
 
-/* バドミントンコート線 */
+/* ===== コート線（完成形） ===== */
 .top-select::before {
   content: "";
   position: absolute;
   inset: 6%;
-  border: 3px solid rgba(255,255,255,0.95); /* ダブルス外枠 */
+  border: 3px solid rgba(255,255,255,0.95);
 
   background:
     /* ネット */
@@ -169,30 +153,7 @@ li {
       transparent 94.1%
     ),
 
-    /* センターライン（上側：前サービスラインまで） */
-linear-gradient(
-  to bottom,
-  transparent 0%,
-  transparent 31.6%,
-  rgba(255,255,255,0.95) 31.9%,
-  transparent 32.2%
-),
-
-/* センターライン（下側：前サービスラインまで） */
-linear-gradient(
-  to bottom,
-  transparent 68.1%,
-  rgba(255,255,255,0.95) 68.4%,
-  transparent 100%
-),
-
-/* センターラインの横位置（中央だけに表示） */
-linear-gradient(
-  to right,
-  transparent 49.7%,
-  rgba(255,255,255,0.95) 50%,
-  transparent 50.3%
-),
+    /* センターライン（上側：前サービスまで） */
     linear-gradient(
       to bottom,
       transparent 0%,
@@ -200,11 +161,21 @@ linear-gradient(
       rgba(255,255,255,0.95) 31.9%,
       transparent 32.2%
     ),
+
+    /* センターライン（下側：前サービスまで） */
     linear-gradient(
       to bottom,
       transparent 68.1%,
       rgba(255,255,255,0.95) 68.4%,
       transparent 100%
+    ),
+
+    /* センターライン位置（中央のみ） */
+    linear-gradient(
+      to right,
+      transparent 49.7%,
+      rgba(255,255,255,0.95) 50%,
+      transparent 50.3%
     ),
 
     /* シングルスサイドライン */
@@ -240,7 +211,9 @@ linear-gradient(
   margin-bottom: 30px;
 }
 
-/* ボタン */
+/* =====================================================
+   ボタン
+===================================================== */
 .select-buttons {
   display: flex;
   flex-direction: column;
@@ -248,7 +221,6 @@ linear-gradient(
 }
 
 .btn {
-  display: inline-block;
   padding: 26px 44px;
   font-size: 1.6rem;
   font-weight: bold;
@@ -260,7 +232,6 @@ linear-gradient(
   background: linear-gradient(135deg, #1e90ff, #004aad);
 }
 
-.btn.frilledfish,
 .btn.frilledshark {
   background: linear-gradient(135deg, #4fc3f7, #0288d1);
 }
@@ -281,72 +252,16 @@ footer {
   color: #555;
 }
 
-footer a {
-  font-weight: bold;
-}
-
-/* =====================================================
-   SNSボタン
-===================================================== */
-.sns-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-weight: bold;
-  transition: opacity 0.2s;
-}
-
-.sns-btn.instagram {
-  background: linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888
-  );
-  color: #fff;
-}
-
-.sns-btn:hover {
-  opacity: 0.85;
-}
-
-.sns-icon {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0) invert(1);
-}
-
 /* =====================================================
    スマホ対応
 ===================================================== */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .site-header {
     padding: 30px 12px 22px;
   }
 
   .site-header h1 {
-    font-size: 1.6rem; /* ← スマホでも1行 */
-  }
-
-  .site-nav a {
-    font-size: 0.95rem;
-    padding: 12px 0;
-  }
-
-  main {
-    margin: 25px auto;
-  }
-
-  section {
-    padding: 22px;
-  }
-
-  h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .btn {
