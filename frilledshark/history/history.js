@@ -7,6 +7,7 @@ const historyData = [
   { date: "2025-10-09", priority: 1, title: "募集サイトでチームメンバー募集開始" },
   { date: "2025-10-09", priority: 1, title: "LINEグループ作成" },
   { date: "2025-11-06", priority: 1, title: "第1回練習実施" },
+  { date: "2025-11-08", priority: 1, title: "チームアイコン作製" },
   { date: "2025-10-05", priority: 3, title: "小平市民混合ダブルス大会にて代表ACL断裂" },
   { date: "2025-11-16", priority: 3, title: "小平市民ダブルス大会 MD3🥇（代表半月板損傷）" },
   { date: "2025-12-16", priority: 3, title: "代表 ACL・半月板 手術" },
