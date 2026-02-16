@@ -19,7 +19,8 @@ const historyData = [
 
   // 2026年
   { date: "2026-01-18", priority: 3, title: "調布市民ダブルス大会 MD3🥈" },
-  { date:　"2026-01-28",　priority: 2,　title: "当ホームページ開設" }
+  { date:　"2026-01-28",　priority: 2,　title: "当ホームページ開設" },
+  { date:　"2026-01-28",　priority: 3,　title: "小平市民総合体育館で団体利用登録完了" }
 ];
 
 // ============================
