@@ -211,6 +211,13 @@ li {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  align-items: stretch;
+}
+
+.select-buttons .btn{
+  width: 100%;
+  max-width: 650px;
 }
 
 .btn {
