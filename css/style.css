@@ -242,8 +242,14 @@ li {
   margin-top: 6px;
 }
 
-.btn.barracuda .btn-sub {
-  color: rgba(255,255,255,0.92);
+.btn-name-ja{
+  display:block;
+  font-size:1.2rem;
+  margin-top:-4px;
+}
+
+.btn.barracuda .btn-sub{
+  color:rgba(255,255,255,0.92);
 }
 
 /* ===== フッター ===== */
