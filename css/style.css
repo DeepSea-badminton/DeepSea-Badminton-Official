@@ -231,6 +231,10 @@ li {
   background: linear-gradient(135deg, #4fc3f7, #0288d1);
 }
 
+.btn.barracuda {
+  background: linear-gradient(135deg, #b8bcc2, #7f868d);
+}
+
 .btn-sub {
   display: block;
   font-size: 0.9rem;
