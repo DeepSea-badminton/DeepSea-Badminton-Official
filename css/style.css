@@ -211,12 +211,6 @@ li {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 100%;
-  max-width: 760px;
-}
-
-.select-buttons .btn{
-  width: 100%;
 }
 
 .btn {
@@ -246,16 +240,6 @@ li {
   font-size: 0.9rem;
   color: #000;
   margin-top: 6px;
-}
-
-.btn-name-ja{
-  display:block;
-  font-size:1.2rem;
-  margin-top:-4px;
-}
-
-.btn.barracuda .btn-sub{
-  color:rgba(255,255,255,0.92);
 }
 
 /* ===== フッター ===== */
