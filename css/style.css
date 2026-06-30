@@ -243,11 +243,7 @@ li {
 }
 
 .btn-sub.barracuda{
-  display: block;
-  font-size: 0.9rem;
   color: rgba(255,255,255,0.92);
-  margin-top: 6px;
-  min-height: 170px;
 }
 
 /* ===== フッター ===== */
