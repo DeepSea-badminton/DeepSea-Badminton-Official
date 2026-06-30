@@ -222,6 +222,10 @@ li {
   color: #fff;
 }
 
+.top-select .btn {
+  display: block;
+}
+
 .btn.deepsea {
   background: linear-gradient(135deg, #1e90ff, #004aad);
 }
