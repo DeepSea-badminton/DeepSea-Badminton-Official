@@ -242,7 +242,7 @@ li {
   margin-top: 6px;
 }
 
-.btn-sub.barracuda{
+.btn.barracuda .btn-sub {
   color: rgba(255,255,255,0.92);
 }
 
