@@ -211,6 +211,12 @@ li {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.select-buttons .btn{
+  width: 100%;
 }
 
 .btn {
@@ -220,10 +226,6 @@ li {
   font-weight: bold;
   border-radius: 16px;
   color: #fff;
-}
-
-.top-select .btn {
-  display: block;
 }
 
 .btn.deepsea {
