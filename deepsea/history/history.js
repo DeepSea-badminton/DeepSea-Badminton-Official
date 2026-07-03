@@ -21,10 +21,13 @@ const historyData = [
  ,{ date: "2026-01-18", priority: 3, title: "調布市民ダブルス大会 MD3🥈" }
  ,{ date:　"2026-01-28",　priority: 2,　title: "当ホームページ開設" }
  ,{ date:　"2026-01-28",　priority: 3,　title: "小平市民総合体育館で団体利用登録完了" }
+ ,{ date: "2026-02-08", priority: 3, title: "小平市民大会団体戦 MD2🥉" }
  ,{ date:　"2026-02-18",　priority: 3,　title: "小平元気村おがわ東で団体利用登録完了" }
- ,{ date:　"2026-02-21",　priority: 3,　title: "小平市民総合体育館で団体利用登録完了" }
+ ,{ date:　"2026-02-21",　priority: 3,　title: "東村山市スポーツセンターで利用登録完了" }
  ,{ date: "2026-03-27", priority: 3, title: "北区高校生ダブルス大会 WD2🥉" }
  ,{ date: "2026-04-15", priority: 1, title: "チーム設立1周年兼練習開催50回記念第1回ディープシー杯（部内戦）開催" }
+ ,{ date: "2026-04-26", priority: 3, title: "小平市民ダブルス大会 MD3🥇🥈WD3🥇🥉" }
+ ,{ date: "2026-05-31", priority: 3, title: "小平市民シングルス大会 MD2🥇WD2🥇" }
 ];
 
 // ============================
