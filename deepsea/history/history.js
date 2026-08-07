@@ -29,6 +29,7 @@ const historyData = [
  ,{ date: "2026-04-26", priority: 3, title: "小平市民ダブルス大会 MD3🥇🥈WD3🥇🥉" }
  ,{ date: "2026-05-31", priority: 3, title: "小平市民シングルス大会 MD2🥇WD2🥇" }
  ,{ date: "2026-06-28", priority: 3, title: "小平市民ミックス大会 XD2🥉XD3🥇🥉" }
+ ,{ date: "2026-08-07", priority: 1, title: "チームメンバー100名到達！" }
 ];
 
 // ============================
