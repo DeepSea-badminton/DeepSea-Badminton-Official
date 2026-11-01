@@ -32,7 +32,7 @@ const historyData = [
  ,{ date: "2026-08-07", priority: 1, title: "チームメンバー100名到達！" }
  ,{ date: "2026-09-22", priority: 3, title: "小平市民シングルス大会 MS1🥈WS2🥈MS3🥉" }
  ,{ date: "2026-09-27", priority: 3, title: "武蔵村山オープン混合ダブルス大会 XD3🥈🥉" }
- ,{ date: "2026-06-28", priority: 3, title: "小平市民ミックス大会 XD2🥉" }
+ ,{ date: "2026-10-25", priority: 3, title: "小平市民ミックス大会 XD2🥉" }
 ];
 
 // ============================
